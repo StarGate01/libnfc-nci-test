@@ -5,7 +5,12 @@
 
   outputs = { self, nixpkgs }:
     let
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        config = {
+          libnfc-nci.debug = true;
+        };
+      };
     in
     {
       devShell.x86_64-linux =
