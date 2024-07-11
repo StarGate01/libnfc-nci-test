@@ -4,7 +4,7 @@ Test application to interface libnfc-nci
 
 ## Requirements
 
-Get and install the libnfc-nci library from https://github.com/NXPNFCLinux/linux_libnfc-nci/ , which works with the kernel driver from https://github.com/jr64/nxp-pn5xx .
+Get and install the (forked) libnfc-nci library from https://github.com/StarGate01/linux_libnfc-nci/ , which works with the kernel driver from https://github.com/jr64/nxp-pn5xx .
 
 Other requirements are `gcc`, `cmake`, `pkg-config`, and `make` .
 
