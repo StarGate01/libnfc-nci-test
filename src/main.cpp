@@ -95,7 +95,14 @@ int main()
         uint8_t select[] = { 0x00, 0xA4, 0x04, 0x00, 0x07, 0xD2, 0x76, 0x00, 0x00, 0x85, 0x01, 0x01, 0x00 };
         transmit(select, sizeof(select) / sizeof(uint8_t));
 
+        printf("Reconnecting...\n");
+        nfcTag_reconnect();
+        printf("Reconnected.\n");
+
         uint8_t vk_ver[] = { 0x80, 0xF4, 0x99, 0x99, 0x00 };
+        transmit(vk_ver, sizeof(vk_ver) / sizeof(uint8_t));
+
+        transmit(select, sizeof(select) / sizeof(uint8_t));
         transmit(vk_ver, sizeof(vk_ver) / sizeof(uint8_t));
 
         uint8_t select_cc[] = { 0x00, 0xA4, 0x00, 0x0C, 0x02, 0xE1, 0x03 };
